@@ -63,6 +63,24 @@
     border: 2px solid hsl(240, 12%, 44%);
 }
 
+.check-mark:hover {
+    /* background: linear-gradient(
+        to bottom,
+        hsl(240, 12%, 44%) 0%,
+        hsl(240, 12%, 44%) 100%
+    ); */
+    background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+}
+
+.check-mark.checked {
+    /* background: linear-gradient(
+        to bottom,
+        hsl(240, 12%, 44%) 0%,
+        hsl(240, 12%, 44%) 100%
+    ); */
+    background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+}
+
 .check-mark img {
     visibility: hidden;
 }
@@ -70,22 +88,6 @@
 .check-mark.checked img,
 .check-mark:hover img {
     visibility: visible;
-}
-
-.check-mark.checked {
-    background: linear-gradient(
-        to bottom,
-        hsl(240, 12%, 44%) 0%,
-        hsl(240, 12%, 44%) 100%
-    );
-}
-
-.check-mark:hover {
-    background: linear-gradient(
-        to bottom,
-        hsl(240, 12%, 44%) 0%,
-        hsl(240, 12%, 44%) 100%
-    );
 }
 
 .new-todo-input {
@@ -120,6 +122,11 @@
 .task-list {
     width: 100%;
     /* height: 70px; */
+}
+
+.task-text.checked {
+    text-decoration: line-through;
+    color: hsl(233, 14%, 35%);
 }
 
 .task-item {
@@ -165,20 +172,15 @@
     padding: 0 6px;
 }
 
+.items-statuses .active {
+    color: hsl(220, 98%, 61%);
+}
+
 .items-statuses__item:hover,
 .items-clear:hover {
     color: hsl(220, 98%, 61%);
 }
 
-.items-statuses .active {
-    color: hsl(220, 98%, 61%);
-}
-
 .items-clear {
     cursor: pointer;
-}
-
-.task-text.checked {
-    text-decoration: line-through;
-    color: hsl(233, 14%, 35%);
 }

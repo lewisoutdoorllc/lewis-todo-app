@@ -3,17 +3,18 @@ import TaskInput from './componets/TaskInput';
 import TaskList from './componets/TaskList';
 import React, { useState, useEffect } from 'react';
 
+
+const data = [
+  { id: 1, text: "Finish contacts hw", status: false },
+  { id: 2, text: "Study react hooks", status: false },
+  { id: 3, text: "Finish Clever programmer challenge", status: false },
+  { id: 4, text: "Run 1 mile", status: false },
+  { id: 5, text: "Finish errands", status: false },
+  { id: 6, text: "Complete Todo App", status: false },
+];
+
+
 function App() {
-
-  const data = [
-    { id: 1, text: "Finish contacts hw", status: false },
-    { id: 2, text: "Study react hooks", status: false },
-    { id: 3, text: "Finish Clever programmer challenge", status: false },
-    { id: 4, text: "Run 1 mile", status: false },
-    { id: 5, text: "Finish errands", status: false },
-    { id: 6, text: "Complete Todo App", status: false },
-  ];
-
 
   const [tasks, setTasks] = useState(data);
   const [filteredTask, setFilteredTask] = useState(tasks)

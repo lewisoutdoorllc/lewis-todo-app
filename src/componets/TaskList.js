@@ -2,25 +2,25 @@ import React from 'react'
 import FilterCotrol from './FilterCotrol'
 import Task from './Task'
 
-function TaskList({ tasks, filteredTask, setTasks, filterStatus, setFilterStatus }) {
+function TaskList({ tasks, setTasks }) {
 
     const clearCompleted = () => {
-        setTasks(tasks.filter(task => task.status === true));
-
-        
+        setTasks(tasks.filter(task => task.status === true));        
     }
 
     return (
         <div className="task-list-wrapper">
             <div className="task-list">
                 {tasks.map((task) => {
+                    // console.log(task);
                     return <Task
                         key={task.id}
                         text={task.text}
                         status={task.status}
+                        tasks={tasks}
                         task={task}
                         setTasks={setTasks}
-                        setFilterStatus={setFilterStatus}
+                        // setFilterStatus={setFilterStatus}
                     />
                 })}
             </div>
