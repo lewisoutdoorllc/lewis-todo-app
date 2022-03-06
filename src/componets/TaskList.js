@@ -2,11 +2,11 @@ import React from 'react'
 import FilterCotrol from './FilterCotrol'
 import Task from './Task'
 
-function TaskList({ tasks, setTasks }) {
+function TaskList({ tasks, setTasks, filterStatus, setFilterStatus }) {
 
     const clearCompleted = () => {
         setTasks(tasks.filter(task => task.status === true));        
-    }
+    }   
 
     return (
         <div className="task-list-wrapper">
@@ -20,7 +20,6 @@ function TaskList({ tasks, setTasks }) {
                         tasks={tasks}
                         task={task}
                         setTasks={setTasks}
-                        // setFilterStatus={setFilterStatus}
                     />
                 })}
             </div>
@@ -28,7 +27,10 @@ function TaskList({ tasks, setTasks }) {
                 <div className="items-left">
                     5 items left
                 </div>
-                <FilterCotrol />
+                <FilterCotrol 
+                    filterStatus={filterStatus}
+                    setFilterStatus={setFilterStatus}
+                />
                 <div className="items-clear" onClick={clearCompleted}>
                     <span>Clear Completed</span>
                 </div>

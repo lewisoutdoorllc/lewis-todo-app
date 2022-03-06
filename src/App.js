@@ -20,6 +20,8 @@ function App() {
   const [filteredTask, setFilteredTask] = useState(tasks)
   const [filterStatus, setFilterStatus] = useState('all');
 
+  
+
   useEffect(() => {
     const handleFilter = () => {
       if (filterStatus === 'active') {

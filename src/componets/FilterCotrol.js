@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-function FilterControl() {
-
-    const [filterStatus, setFilterStatus] = useState('all');
-    console.log(filterStatus);
+function FilterControl({ filterStatus, setFilterStatus }) {
+    // console.log(filterStatus);
 
     const handleFilter = (status) => {
         setFilterStatus(status);
-    }
+    } 
 
     return (
         <div className="items-statuses">
