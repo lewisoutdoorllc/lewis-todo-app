@@ -17,20 +17,20 @@ const data = [
 function App() {
 
   const [tasks, setTasks] = useState(data);
-  const [filteredTask, setFilteredTask] = useState(tasks)
+  const [filteredTasks, setfilteredTasks] = useState(tasks)
   const [filterStatus, setFilterStatus] = useState('all');
 
 
   useEffect(() => {
     const handleFilter = () => {
       if (filterStatus === 'active') {
-        setTasks(tasks.filter(task => task.status === false));
+        setfilteredTasks(tasks.filter(task => task.status === false));
       }
       else if (filterStatus === 'completed') {
-        setTasks(tasks.filter(task => task.status === true));
+        setfilteredTasks(tasks.filter(task => task.status === true));
       }
       else {
-        setFilteredTask(tasks);
+        setfilteredTasks(tasks);
       }
     }
     handleFilter();
@@ -53,7 +53,7 @@ function App() {
           setTasks={setTasks}
           filterStatus={filterStatus}
           setFilterStatus={setFilterStatus}
-          filteredTask={filteredTask}
+          filteredTasks={filteredTasks}
         />
 
       </div>
