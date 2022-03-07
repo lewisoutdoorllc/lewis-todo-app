@@ -2,6 +2,7 @@ import './App.css';
 import TaskInput from './componets/TaskInput';
 import TaskList from './componets/TaskList';
 import React, { useState, useEffect } from 'react';
+import Sun from './images/icon-sun.svg';
 
 
 const data = [
@@ -19,6 +20,14 @@ function App() {
   const [tasks, setTasks] = useState(data);
   const [filteredTasks, setfilteredTasks] = useState(tasks)
   const [filterStatus, setFilterStatus] = useState('all');
+
+
+  const darkModeIcon = <img src={Sun} alt='logo' />;
+  // NEED TO STILL IMPLEMENT A DARK MODE
+  const darkModeToggle = () => {
+  }
+
+
 
 
   useEffect(() => {
@@ -42,7 +51,9 @@ function App() {
       <div className="container">
         <div className="header">
           <h1>TODO</h1>
-          <img src='./images/icon-sun.svg' alt='logo' />
+          <div className="dark-mode" onClick={darkModeToggle}>
+            <div>{darkModeIcon}</div>
+          </div>
         </div>
         <TaskInput
           tasks={tasks}

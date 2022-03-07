@@ -14,7 +14,7 @@ function Task({ text, task, tasks, setTasks }) {
         setMutableTask({ ...mutableTask, status: !mutableTask.status });
 
         const updatedTasks = tasks.map((item) => {
-            console.log(item)
+            // console.log(item)
             return task.id === item.id ? { ...item, status: !item.status } : item;
         })
         setTasks(updatedTasks);

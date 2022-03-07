@@ -20,7 +20,6 @@ function TaskInput({ tasks, setTasks }) {
                 status: false
             }
             setTasks([newTask, ...tasks]);
-            console.log(newTask);
         }
     }
 

@@ -4,8 +4,11 @@ import Task from './Task'
 
 function TaskList({ tasks, setTasks, filterStatus, setFilterStatus, filteredTasks }) {
 
+    // console.log(tasks.length);
+    // console.log(filteredTasks.length);
+    const tasksLeft = filteredTasks.length;
     const clearCompleted = () => {
-        setTasks(tasks.filter(task => task.status === true));
+        setTasks(tasks.filter(task => task.status === false));
     }
 
     return (
@@ -25,7 +28,7 @@ function TaskList({ tasks, setTasks, filterStatus, setFilterStatus, filteredTask
             </div>
             <div className="task-items-info">
                 <div className="items-left">
-                    5 items left
+                    <p><span>{tasksLeft}</span> items left</p>
                 </div>
                 <FilterCotrol
                     filterStatus={filterStatus}
