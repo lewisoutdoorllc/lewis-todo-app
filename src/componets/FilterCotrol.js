@@ -1,11 +1,11 @@
 import React from 'react'
 
 function FilterControl({ filterStatus, setFilterStatus }) {
-    // console.log(filterStatus);
+    console.log(filterStatus);
 
     const handleFilter = (status) => {
         setFilterStatus(status);
-    } 
+    }
 
     return (
         <div className="items-statuses">

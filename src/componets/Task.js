@@ -1,18 +1,25 @@
 import React, { useState } from 'react'
 import Check from '../images/icon-check.svg';
 
-function Task({ text, task }) {
+function Task({ text, task, tasks, setTasks }) {
 
     const [mutableTask, setMutableTask] = useState(task);
+
     const checked = mutableTask.status ? 'checked' : '';
     const checkIcon = mutableTask.status ? (<img src={Check} alt="check" />) : '';
 
 
     const markCompleted = () => {
-        // console.log(mutableTask);
+        // console.log(tasks);
         setMutableTask({ ...mutableTask, status: !mutableTask.status });
-        console.log(mutableTask);
+
+        const updatedTasks = tasks.map((item) => {
+            console.log(item)
+            return task.id === item.id ? { ...item, status: !item.status } : item;
+        })
+        setTasks(updatedTasks);
     }
+
 
     return (
         <div className="task-item">
