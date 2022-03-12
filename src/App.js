@@ -3,6 +3,8 @@ import TaskInput from './componets/TaskInput';
 import TaskList from './componets/TaskList';
 import React, { useState, useEffect } from 'react';
 import Sun from './images/icon-sun.svg';
+import Moon from './images/icon-moon.svg';
+import useLocalStorage from 'use-local-storage';
 
 
 const data = [
@@ -20,11 +22,16 @@ function App() {
   const [tasks, setTasks] = useState(data);
   const [filteredTasks, setfilteredTasks] = useState(tasks)
   const [filterStatus, setFilterStatus] = useState('all');
+  // const [darkMode, setDarkMode] = useState(false);
+  const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
 
 
-  const darkModeIcon = <img src={Sun} alt='logo' />;
+  // const darkModeIcon = <img src={Sun} alt='logo' />;
   // NEED TO STILL IMPLEMENT A DARK MODE
   const darkModeToggle = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
   }
 
 
@@ -47,17 +54,21 @@ function App() {
 
 
   return (
-    <div className="App">
+    // <div className={`App ${theme}`} style={ theme === 'dark' ? {backgroundColor: 'red'} : {backgroundColor: 'orange'}}>
+    <div className={`App ${theme}`}>
       <div className="container">
         <div className="header">
           <h1>TODO</h1>
           <div className="dark-mode" onClick={darkModeToggle}>
-            <div>{darkModeIcon}</div>
+            <div>
+              {theme === 'light' ? <img src={Sun} alt='logo' /> : <img src={Moon} alt='logo' />}
+            </div>
           </div>
         </div>
         <TaskInput
           tasks={tasks}
           setTasks={setTasks}
+          theme={theme}
         />
         <TaskList
           tasks={tasks}
@@ -65,6 +76,7 @@ function App() {
           filterStatus={filterStatus}
           setFilterStatus={setFilterStatus}
           filteredTasks={filteredTasks}
+          theme={theme}
         />
 
       </div>

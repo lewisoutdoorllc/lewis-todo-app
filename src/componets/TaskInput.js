@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function TaskInput({ tasks, setTasks }) {
+function TaskInput({ tasks, setTasks, theme }) {
 
     const [input, setInput] = useState('');
 
@@ -26,13 +26,13 @@ function TaskInput({ tasks, setTasks }) {
 
 
     return (
-        <div className="task-input">
+        <div className={`task-input ${theme}`}>
             <div className="check">
                 <div className="check-mark">
 
                 </div>
             </div>
-            <div className="new-todo-input">
+            <div className={`new-todo-input ${theme}`}>
                 {/* <form onSubmit={}> */}
                 <form onSubmit={handleForm}>
                     <input onChange={handleChange} id="todo-input" type="text" placeholder="Create a new task..." />

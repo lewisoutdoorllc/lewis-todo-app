@@ -1,13 +1,18 @@
 import React, { useState } from 'react'
 import Check from '../images/icon-check.svg';
+import Cross from '../images/icon-cross.svg';
 
-function Task({ text, task, tasks, setTasks }) {
+
+function Task({ text, task, tasks, setTasks, theme }) {
 
     const [mutableTask, setMutableTask] = useState(task);
 
     const checked = mutableTask.status ? 'checked' : '';
     const checkIcon = mutableTask.status ? (<img src={Check} alt="check" />) : '';
 
+    const clearCompleted = () => {
+        setTasks(tasks.filter(task => task.status === false));
+    }
 
     const markCompleted = () => {
         // console.log(tasks);
@@ -29,8 +34,11 @@ function Task({ text, task, tasks, setTasks }) {
                 </div>
             </div>
 
-            <div className={`task-text ${checked}`}>
+            <div className={`task-text ${checked} ${theme}`}>
                 <p>{text}</p>
+            </div>
+            <div className="remove-cross">
+                <img src={Cross} alt="cross" onClick={clearCompleted} />
             </div>
         </div>
     )

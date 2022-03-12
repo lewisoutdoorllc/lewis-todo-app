@@ -2,7 +2,7 @@ import React from 'react'
 import FilterCotrol from './FilterCotrol'
 import Task from './Task'
 
-function TaskList({ tasks, setTasks, filterStatus, setFilterStatus, filteredTasks }) {
+function TaskList({ tasks, setTasks, filterStatus, setFilterStatus, filteredTasks, theme }) {
 
     // console.log(tasks.length);
     // console.log(filteredTasks.length);
@@ -12,8 +12,8 @@ function TaskList({ tasks, setTasks, filterStatus, setFilterStatus, filteredTask
     }
 
     return (
-        <div className="task-list-wrapper">
-            <div className="task-list">
+        <div className={`task-list-wrapper ${theme}`}>
+            <div className={`task-list ${theme}`}>
                 {filteredTasks.map((task) => {
                     // console.log(task);
                     return <Task
@@ -23,10 +23,11 @@ function TaskList({ tasks, setTasks, filterStatus, setFilterStatus, filteredTask
                         status={task.status}
                         tasks={tasks}
                         setTasks={setTasks}
+                        theme={theme}
                     />
                 })}
             </div>
-            <div className="task-items-info">
+            <div className={`task-items-info ${theme}`}>
                 <div className="items-left">
                     <p><span>{tasksLeft}</span> items left</p>
                 </div>
