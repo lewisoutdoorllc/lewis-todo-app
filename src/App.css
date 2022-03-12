@@ -61,6 +61,7 @@
     border-radius: 6px;
     margin-top: 15px;
 }
+
 .task-input.dark {
     background-color: hsl(235, 24%, 19%);
 }
@@ -131,6 +132,14 @@
     background-color: transparent;
     color: hsl(235, 18%, 47%) !important;
     letter-spacing: 1px;
+}
+
+#todo-input.dark:-webkit-autofill,
+#todo-input.dark:-webkit-autofill:hover,
+#todo-input.dark:-webkit-autofill:focus,
+#todo-input.dark:-webkit-autofill:active {
+    transition: background-color 5000s;
+    -webkit-text-fill-color: #fff !important;
 }
 
 .task-list-wrapper {
@@ -243,4 +252,40 @@
 .dark-mode-toggle {
     background-color: white;
     color: black;
+}
+
+@media (max-width: 768px) {
+    .App {
+        background-size: auto;
+    }
+    .container {
+        width: 88%;
+    }
+    .task-items-info {
+        padding: 0 8px 0 8px;
+        height: 98px;
+    }
+    .task-items-info .items-statuses {
+        display: flex;
+        /* flex-direction: column; */
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 80%;
+        border-left: 1px solid hsl(237, 14%, 26%);
+        border-right: 1px solid hsl(237, 14%, 26%);
+    }
+    .items-left p {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        /* border-right: 1px solid hsl(237, 14%, 26%); */
+    }
+    .items-clear span {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: flex-end; */
+        /* align-items: flex-end; */
+        text-align: center;
+    }
 }
