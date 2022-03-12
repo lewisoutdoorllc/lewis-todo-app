@@ -134,10 +134,10 @@
     letter-spacing: 1px;
 }
 
-#todo-input.dark:-webkit-autofill,
-#todo-input.dark:-webkit-autofill:hover,
-#todo-input.dark:-webkit-autofill:focus,
-#todo-input.dark:-webkit-autofill:active {
+#todo-input:-webkit-autofill,
+#todo-input:-webkit-autofill:hover,
+#todo-input:-webkit-autofill:focus,
+#todo-input:-webkit-autofill:active {
     transition: background-color 5000s;
     -webkit-text-fill-color: #fff !important;
 }
