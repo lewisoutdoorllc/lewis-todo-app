@@ -10,8 +10,9 @@ function Task({ text, task, tasks, setTasks, theme }) {
     const checked = mutableTask.status ? 'checked' : '';
     const checkIcon = mutableTask.status ? (<img src={Check} alt="check" />) : '';
 
-    const clearCompleted = () => {
-        setTasks(tasks.filter(task => task.status === false));
+    const clearSingleTask = () => {
+        // console.log(task)
+        setTasks(tasks.filter(task => task.id !== mutableTask.id));
     }
 
     const markCompleted = () => {
@@ -25,7 +26,6 @@ function Task({ text, task, tasks, setTasks, theme }) {
         setTasks(updatedTasks);
     }
 
-
     return (
         <div className="task-item">
             <div className="check" onClick={markCompleted}>
@@ -38,7 +38,7 @@ function Task({ text, task, tasks, setTasks, theme }) {
                 <p>{text}</p>
             </div>
             <div className="remove-cross">
-                <img src={Cross} alt="cross" onClick={clearCompleted} />
+                <img src={Cross} alt="cross" onClick={clearSingleTask} />
             </div>
         </div>
     )

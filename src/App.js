@@ -10,7 +10,7 @@ import useLocalStorage from 'use-local-storage';
 const data = [
   { id: 1, text: "Finish contacts hw", status: false },
   { id: 2, text: "Study react hooks", status: false },
-  { id: 3, text: "Finish Clever programmer challenge", status: false },
+  { id: 3, text: "Finish programmer challenge", status: false },
   { id: 4, text: "Run 1 mile", status: false },
   { id: 5, text: "Finish errands", status: false },
   { id: 6, text: "Complete Todo App", status: false },
