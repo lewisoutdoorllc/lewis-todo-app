@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import Sun from './images/icon-sun.svg';
 import Moon from './images/icon-moon.svg';
 import useLocalStorage from 'use-local-storage';
+// import { DragDropContext, Draggable } from "react-beautiful-dnd";
 
 
 const data = [
@@ -70,6 +71,7 @@ function App() {
           setTasks={setTasks}
           theme={theme}
         />
+        {/* <DragDropContext> */}
         <TaskList
           tasks={tasks}
           setTasks={setTasks}
@@ -78,7 +80,7 @@ function App() {
           filteredTasks={filteredTasks}
           theme={theme}
         />
-
+        {/* </DragDropContext> */}
       </div>
     </div>
   );

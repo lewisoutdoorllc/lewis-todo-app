@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Check from '../images/icon-check.svg';
 import Cross from '../images/icon-cross.svg';
+// import { Draggable } from "react-beautiful-dnd";
 
 
 function Task({ text, task, tasks, setTasks, theme }) {
@@ -27,6 +28,7 @@ function Task({ text, task, tasks, setTasks, theme }) {
     }
 
     return (
+        // <Draggable>
         <div className="task-item">
             <div className="check" onClick={markCompleted}>
                 <div className={`check-mark ${checked}`}>
@@ -41,6 +43,7 @@ function Task({ text, task, tasks, setTasks, theme }) {
                 <img src={Cross} alt="cross" onClick={clearSingleTask} />
             </div>
         </div>
+        // </Draggable>
     )
 }
 

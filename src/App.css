@@ -20,7 +20,7 @@
 
 .App {
     background-color: hsl(236, 33%, 92%);
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-image: url("../public/images/bg-desktop-light.jpg");
     background-size: contain;
@@ -134,10 +134,10 @@
     letter-spacing: 1px;
 }
 
-#todo-input:-webkit-autofill,
-#todo-input:-webkit-autofill:hover,
-#todo-input:-webkit-autofill:focus,
-#todo-input:-webkit-autofill:active {
+.todo-input-dark.dark:-webkit-autofill,
+.todo-input-dark.dark:-webkit-autofill:hover,
+.todo-input-dark.dark:-webkit-autofill:focus,
+.todo-input-dark.dark:-webkit-autofill:active {
     transition: background-color 5000s;
     -webkit-text-fill-color: #fff !important;
 }

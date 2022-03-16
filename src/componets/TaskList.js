@@ -1,6 +1,7 @@
 import React from 'react'
 import FilterCotrol from './FilterCotrol'
 import Task from './Task'
+// import { DragDropContext, Droppable } from "react-beautiful-dnd";
 
 function TaskList({ tasks, setTasks, filterStatus, setFilterStatus, filteredTasks, theme }) {
 
@@ -12,34 +13,40 @@ function TaskList({ tasks, setTasks, filterStatus, setFilterStatus, filteredTask
     }
 
     return (
+
         <div className={`task-list-wrapper ${theme}`}>
-            <div className={`task-list ${theme}`}>
-                {filteredTasks.map((task) => {
-                    // console.log(task);
-                    return <Task
-                        key={task.id}
-                        task={task}
-                        text={task.text}
-                        status={task.status}
-                        tasks={tasks}
-                        setTasks={setTasks}
-                        theme={theme}
-                    />
-                })}
-            </div>
-            <div className={`task-items-info ${theme}`}>
-                <div className="items-left">
-                    <p><span>{tasksLeft}</span> items left</p>
-                </div>
-                <FilterCotrol
-                    filterStatus={filterStatus}
-                    setFilterStatus={setFilterStatus}
-                />
-                <div className="items-clear" onClick={clearCompleted}>
-                    <span>Clear Completed</span>
-                </div>
-            </div>
+            {/* <DragDropContext> */}
+                {/* <Droppable> */}
+                    <div className={`task-list ${theme}`}>
+                        {filteredTasks.map((task) => {
+                            // console.log(task);
+                            return <Task
+                                key={task.id}
+                                task={task}
+                                text={task.text}
+                                status={task.status}
+                                tasks={tasks}
+                                setTasks={setTasks}
+                                theme={theme}
+                            />
+                        })}
+                    </div>
+                    <div className={`task-items-info ${theme}`}>
+                        <div className="items-left">
+                            <p><span>{tasksLeft}</span> items left</p>
+                        </div>
+                        <FilterCotrol
+                            filterStatus={filterStatus}
+                            setFilterStatus={setFilterStatus}
+                        />
+                        <div className="items-clear" onClick={clearCompleted}>
+                            <span>Clear Completed</span>
+                        </div>
+                    </div>
+                {/* </Droppable> */}
+            {/* </DragDropContext> */}
         </div>
+
     )
 }
 

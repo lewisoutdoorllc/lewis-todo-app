@@ -35,7 +35,7 @@ function TaskInput({ tasks, setTasks, theme }) {
             <div className={`new-todo-input ${theme}`}>
                 {/* <form onSubmit={}> */}
                 <form onSubmit={handleForm}>
-                    <input onChange={handleChange} id="todo-input" type="text" placeholder="Create a new task..." />
+                    <input onChange={handleChange} id="todo-input" className={`todo-input-dark ${theme}`} type="text" placeholder="Create a new task..." />
                 </form>
             </div>
         </div>
