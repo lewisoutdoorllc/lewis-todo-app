@@ -154,6 +154,7 @@
 
 .task-list-wrapper.dark {
     background-color: hsl(235, 24%, 19%);
+    box-shadow: 3px 2px 10px hsl(0deg 1% 13%);
 }
 
 .task-list {
